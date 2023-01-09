@@ -1,0 +1,90 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: row;
+  height: 100%;
+  background: brown;
+}
+
+/* Sidebar contents */
+#sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  min-height: 100%;
+  padding: 2em;
+  background: #334155;
+  color: white;
+}
+
+#logo {
+  font-size: 4em;
+  font-weight: bolder;
+}
+
+#projectForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+}
+
+#projectForm input,
+#projectForm button {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+#projectForm button {
+  width: 50%;
+  background: rgb(16, 168, 16);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Project content */
+
+#projectContainer {
+  padding: 3em;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-rows: auto;
+  gap: 2em;
+  width: 100%;
+  background: yellowgreen;
+}
+
+.projectCard {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  padding: 1em;
+  background: white;
+  border-left: #334155 0.5em solid;
+  border-radius: 6px;
+  box-shadow: 0 8px 6px -6px black;
+}
+
+.task,
+.taskHeaders {
+  display: flex;
+  flex-direction: row;
+  gap: 2em;
+  justify-content: space-between;
+}
+
+.taskHeaders {
+  text-decoration: underline;
+  font-weight: bold;
+}
