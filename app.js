@@ -2,6 +2,9 @@
 let projects = [];
 const projectContainer = document.getElementById("projectContainer");
 
+//Get projects drop-down list
+const projectsDropDown = document.getElementById("projectDropdown");
+
 class Project {
   constructor(name, index) {
     this.name = name;
@@ -28,6 +31,16 @@ function clearInputField(inputID) {
 function clearProjectContainer() {
   while (projectContainer.firstChild) {
     projectContainer.removeChild(projectContainer.firstChild);
+  }
+}
+
+function updateDropDown() {
+  for (let i = 0; i < projects.length; i++) {
+    const option = document.createElement("option");
+    option.value = projects[i].name;
+    option.textContent = projects[i].name;
+
+    projectsDropDown.appendChild(option);
   }
 }
 
@@ -70,13 +83,13 @@ function addProjectsToDOM() {
     dueDateHeader.textContent = "Due Date: ";
     taskHeaders.appendChild(dueDateHeader);
 
-    const deleteProjectBtn = document.createElement('button');
-    deleteProjectBtn.textContent = 'X';
-    deleteProjectBtn.classList.add('deleteProjectBtn');
+    const deleteProjectBtn = document.createElement("button");
+    deleteProjectBtn.textContent = "X";
+    deleteProjectBtn.classList.add("deleteProjectBtn");
     deleteProjectBtn.id = `${projects[i].index}`;
-    deleteProjectBtn.addEventListener('click', function() {
+    deleteProjectBtn.addEventListener("click", function () {
       deleteProject(projectCard, deleteProjectBtn);
-    })
+    });
     projectCard.appendChild(deleteProjectBtn);
 
     projectContainer.appendChild(projectCard);
@@ -89,5 +102,6 @@ submitProjectBtn.addEventListener("click", function (e) {
   addProjectToStorage();
   clearProjectContainer();
   addProjectsToDOM();
+  updateDropDown();
   clearInputField("projectNameInput");
 });
