@@ -40,11 +40,19 @@ function addProjectToStorage() {
   projects.push(project);
 }
 
+function deleteProject(project, deleteButton) {
+  if (project.id == deleteButton.id) {
+    projects.splice(projects[project.id], 1);
+    deleteButton.parentElement.remove();
+  }
+}
+
 //add all projects to DOM
 function addProjectsToDOM() {
   for (let i = 0; i < projects.length; i++) {
     const projectCard = document.createElement("div");
     projectCard.classList.add("projectCard");
+    projectCard.id = projects[i].index;
 
     const projectName = document.createElement("h1");
     projectName.textContent = projects[i].name;
@@ -61,6 +69,15 @@ function addProjectsToDOM() {
     const dueDateHeader = document.createElement("p");
     dueDateHeader.textContent = "Due Date: ";
     taskHeaders.appendChild(dueDateHeader);
+
+    const deleteProjectBtn = document.createElement('button');
+    deleteProjectBtn.textContent = 'X';
+    deleteProjectBtn.classList.add('deleteProjectBtn');
+    deleteProjectBtn.id = `${projects[i].index}`;
+    deleteProjectBtn.addEventListener('click', function() {
+      deleteProject(projectCard, deleteProjectBtn);
+    })
+    projectCard.appendChild(deleteProjectBtn);
 
     projectContainer.appendChild(projectCard);
   }
