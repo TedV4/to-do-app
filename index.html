@@ -24,6 +24,27 @@
           <button id="submitProjectBtn">Add project</button>
         </form>
       </div>
+      <div id="taskFormContainer">
+        
+        <form action="" id="taskForm">
+          <label for="taskDescription" id="taskDescriptionLabel"><br>New task</br></label>
+          <input title="Enter a task description here" type="text" id="taskDescription" placeholder="Enter task">
+          <div>
+          <label for="date" id="dueDateLabel"><br>Due Date</br></label>
+          <input type="date">
+          </div>
+          <div></div>
+          <label for="project"><br>Project</br></label>
+          <select id="projectDropdown" name="projectDropdown" default="Select project">
+            <option value="placeholder" selected>Select project</option>
+
+          </select>
+        </div>
+          <div>
+          <button id="submitTaskBtn">Add task</button>
+          </div>
+        </form>
+      </div>
     </div>
     <div id="projectContainer">
       <div class="projectCard">
@@ -34,6 +55,18 @@
         </div>
         <div class="task">
           <p>Write thesis</p>
+          <p>1/13/23</p>
+        </div>
+        <div class="task">
+          <p>Check for typos</p>
+          <p>1/13/23</p>
+        </div>
+        <div class="task">
+          <p>Share with friend</p>
+          <p>1/13/23</p>
+        </div>
+        <div class="task">
+          <p>Submit rough draft</p>
           <p>1/13/23</p>
         </div>
       </div>
