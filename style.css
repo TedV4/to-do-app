@@ -68,6 +68,7 @@ body {
 .projectCard {
   display: flex;
   flex-direction: column;
+  height: min-content;
   gap: 1em;
   padding: 1em;
   background: white;
@@ -98,5 +99,29 @@ body {
   border: none;
   border-radius: 4px;
   background: rgb(247, 75, 75);
+  cursor: pointer;
+}
+
+#taskFormContainer {
+  display: flex;
+  flex-direction: column;
+  margin-top: 6em;
+}
+
+#taskFormContainer label {
+  font-size: 1.5em;
+}
+
+#submitTaskBtn, #projectDropdown, #taskForm input {
+  padding: 0.5em;
+  font-size: 1em;
+}
+
+#submitTaskBtn {
+  width: 50%;
+  background: rgb(16, 168, 16);
+  color: white;
+  border: none;
+  border-radius: 4px;
   cursor: pointer;
 }
